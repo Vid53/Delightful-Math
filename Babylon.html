@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Babylonian Rectangle Methods</title>
+  <link rel="stylesheet" href="website.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+  </style>
+</head>
+<body>
+  <h1>Delightful Mathematics</h1>
+  <div>
+    <h2>
+    <a HREF="Home.html">Home</a>
+    <a HREF="Problems.html">Problems</a>
+    <a HREF="Mission.html">Mission</a>
+    <a HREF="History.html">History</a>
+  </h2>
+  <h3>
+    Babylonian Rectangle Method
+  </h3>
+  <p>
+   The Babylonians had an interesting algorithm to find the length and the width of a rectangle if you knew the sum of the length and width and the area of the rectangle:
+  </p>
+  <ol>
+    <li>Take half of the sum of your length and width.</li>
+    <li>Square this result.</li>
+    <li>Subtract the area of the rectangle from this.</li>
+    <li>Take the square root.</li>
+    <li>Subtract this from the half-sum of the length and width to get one side, and add it to the half-sum of the length and width to get the other side.</li>
+  </ol>
+  <p>
+    Try some values below to see the algorithm in action!
+  </p>
+  <script>
+    function calculatelw()
+{
+        sum = document.getElementById("firstNumber").value;
+        product= document.getElementById("secondNumber").value;
+        half_sum=sum/2.0
+        square_half_sum=half_sum**2.0
+        new_thing=square_half_sum-product
+        new_new_thing=new_thing**0.5
+        length=half_sum-new_new_thing
+        width=half_sum+new_new_thing
+
+        document.getElementById("length").innerHTML = length
+        document.getElementById("width").innerHTML=width
+
+}
+
+  </script>
+  <form>
+    Sum of Length and Width : <input type="text" id="firstNumber" /><br>
+    Area of Rectangle: <input type="text" id="secondNumber" /><br>
+<input type="button" onClick="calculatelw()" Value="Calculate (l,w)" />
+</form>
+<p>The length is : <br>
+<span id = "length" ></span>
+<p>The width is : <br>
+<span id = "width" ></span>
+</p>
+<p>So how exactly does the algorithm work? If we let the width and length be w and l respectively and simplify our algorithm, we can figure it out. </p>
+<p>
+  We know two things:
+  w+l
+  and
+  wl
+  (the area is width times length, so this is equivalent to the expression wl.)
+  <ol>
+  <li>The first instruction says "take half the sum." That's:
+  (w+l)/2</li>
+  <li>The second says:"square this result". That simplifies to:
+  (w^2+2wl+l^2)/4</li>
+  <li>Then the third says: "subtract the area of the rectangle from this:
+  (w^2+2wl+l^2)/4-wl
+  =
+  (w^2+2wl+l^2)/4-(4wl)/4
+  =
+  (w^2-2wl+l^2)/4</li>
+  <li>Now it tells us to take the square root:
+  The square root of the denominator is 2. The square root of the numerator, we might recognize, is (w-l).
+  So now we've got:
+  (w-l)/2</li>
+  <li>Now it says we can subtract this expression from the half-sum of l,w to get one side and add it to the half-sum of l,w to get the other.</li>
+  <li>
+    These two simplify to: (w-l)/2-(w+l)/2=2l/2=l. The length! And (w-l)/2+(w+l)/2=2w/2=w. The width!
+  </ol>
+  <p>
+    So the algorithm is just a set of clever manipulations, (you might have caught the difference of squares!), in the form of a well crafted recipe. The Babylonians couldn't have known this easily, of course. Assigning variables to values was a virtually unheard of concept at the time, as Algebra would take a while to make its grand entry into the world of mathematics.
+  </p>
+  <hr>
+  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img class="commons" alt="Creative Commons License" style="border-width:0" src="by.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+  </div>
+   
+  
+</body>
+</html>

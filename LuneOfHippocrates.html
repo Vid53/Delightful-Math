@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lune of Hippocrates</title>
+    <link rel="stylesheet" href="website.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@500&display=swap');
+    </style>
+  </head>
+  <body>
+    <h1>Delightful Mathematics</h1>
+    <div>
+        <h2>
+          <a HREF="Home.html">Home</a>
+          <a HREF="Problems.html">Problems</a>
+          <a HREF="Mission.html">Mission</a>
+          <a HREF="History.html">History</a>
+        </h2>
+      <h3>
+      Lune of Hippocrates
+      </h3>
+      <img src="Lune.jpg" alt="lune_image">
+      <p>
+        Angle CDA is right, and ACB is a semicircle. Observe two areas, one of a crescent shape with a green border, and the other of the blue triangle. The problem is to find the ratio of the first area to the latter area. For an extra challenge, try solving it before you see the solution. You can check your answer below.
+      </p>
+      <script>
+         function check_answer()
+    {
+      user_answer= document.getElementById("firstNumber").value;
+      if (user_answer==1) {
+        alert("Yes, the answer is 1!")
+      } else {
+        alert("That's not correct. See the solution to see what it is!")
+        
+      }
+    }
+      </script>
+    <form>
+    Answer : <input type="text" id="firstNumber" /><br>
+    <input type="button" onClick="check_answer()" Value="Check My Answer" />
+    </form>
+    <p>Here's the Solution: </p>
+      <hr>
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img class="commons" alt="Creative Commons License" style="border-width:0" src="by.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    </div>
+    
+  </body>
+</html>
